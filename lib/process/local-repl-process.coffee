@@ -5,6 +5,7 @@ GradleRunner = require.resolve './gradle-runner'
 ClojureRunner = require.resolve './clojure-runner'
 path = require 'path'
 fs = require('fs')
+stringArgv = require('string-argv');
 NReplConnection = require './nrepl-connection'
 
 # The code to send to the repl to exit.
@@ -116,7 +117,7 @@ class LocalReplProcess
         @process = Task.once BootRunner,
                              path.resolve(projectPath),
                              atom.config.get('proto-repl.bootPath').replace("/boot",""),
-                             atom.config.get('proto-repl.bootArgs').split(" ")
+                             stringArgv(atom.config.get('proto-repl.bootArgs'))
       when "clojure"
         @process = Task.once ClojureRunner,
                              path.resolve(projectPath),
@@ -126,7 +127,7 @@ class LocalReplProcess
         @process = Task.once LeinRunner,
                              path.resolve(projectPath),
                              atom.config.get('proto-repl.leinPath').replace("/lein",""),
-                             atom.config.get('proto-repl.leinArgs').split(" ")
+                             stringArgv(atom.config.get('proto-repl.leinArgs'))
 
 
     # The process sends stdout

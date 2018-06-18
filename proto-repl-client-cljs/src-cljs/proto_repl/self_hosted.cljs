@@ -29,7 +29,7 @@
   [code callback]
   (replumb/read-eval-call
    ;; TODO provide source paths. eval-str should take the source paths.
-   (replumb/nodejs-options [@atom-project-path] node-io/read-file!)
+   (replumb/options :node [@atom-project-path] node-io/read-file!)
    (fn [res]
      (callback res))
    code))

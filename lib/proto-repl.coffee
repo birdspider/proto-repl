@@ -39,9 +39,9 @@ module.exports = ProtoRepl =
       description: 'Sets whether or not the REPL should use Clojure syntax for highlighting. Disable this if having performance issues with REPL display.'
       default: true
     leinArgs:
-      description: 'The arguments to be passed to leiningen. For advanced users only.'
+      description: 'The arguments to be passed to leiningen. For advanced users only. By default it auto-injects the `proto-repl` dependency.'
       type: 'string'
-      default: "repl :headless"
+      default: "update-in :dependencies conj '[proto-repl \"0.3.2\"]' -- repl :headless"
     bootArgs:
       description: 'The arguments to be passed to boot. For advanced users only.'
       type: 'string'

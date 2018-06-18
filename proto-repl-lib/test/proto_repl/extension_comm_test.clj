@@ -1,6 +1,6 @@
 (ns proto-repl.extension-comm-test
-  (require [clojure.test :refer :all]
-           [proto-repl.extension-comm :as e]))
+  (:require [clojure.test :refer :all]
+            [proto-repl.extension-comm :as e]))
 
 (deftest request-and-response-test
   (testing "Success case"
