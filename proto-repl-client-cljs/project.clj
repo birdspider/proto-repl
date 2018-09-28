@@ -1,7 +1,7 @@
 (defproject proto-repl-client-cljs "0.0.1-SNAPSHOT"
   :description "Implementations of portions of Proto REPL in clojurescript."
   :dependencies [[org.clojure/clojure "1.9.0"]
-                 [org.clojure/clojurescript "1.10.312"]
+                 [org.clojure/clojurescript "1.10.339"]
                  [com.cognitect/transit-cljs "0.8.256"]
                  [fipp "0.6.12"]
                  [replumb "0.2.4"]
